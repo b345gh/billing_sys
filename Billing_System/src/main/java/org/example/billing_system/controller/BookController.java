@@ -28,7 +28,7 @@ public class BookController extends HttpServlet {
 
         switch (pathInfo) {
             case "/ManageBooks":
-                request.getRequestDispatcher("/books/ManageBooks.jsp").forward(request, response);
+                request.getRequestDispatcher("/Admin/ManageBooks.jsp").forward(request, response);
                 break;
 
             default:
