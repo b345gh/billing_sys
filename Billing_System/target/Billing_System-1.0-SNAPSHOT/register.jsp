@@ -9,37 +9,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register - Pahana Edu</title>
-  <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/favicon.ico">
-  <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/favicon.ico">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen py-8">
-<div class="max-w-md w-full mx-auto px-4">
+<body>
+<div>
   <!-- Logo/Header -->
-  <div class="text-center mb-8">
-    <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-600 rounded-full mb-4">
-      <i class="fas fa-graduation-cap text-white text-2xl"></i>
-    </div>
-    <h1 class="text-3xl font-bold text-gray-900">Pahana Edu</h1>
-    <p class="text-gray-600 mt-2">Create your account</p>
+  <div>
+    <h1>Pahana Edu</h1>
+    <p>Create your account</p>
   </div>
 
   <!-- Registration Form -->
-  <div class="bg-white rounded-xl shadow-lg p-8">
-    <% if (request.getAttribute("error") != null) { %>
-    <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
-      <div class="flex items-center">
-        <i class="fas fa-exclamation-circle mr-2"></i>
-        <%= request.getAttribute("error") %>
-      </div>
-    </div>
-    <% } %>
+  <div>
 
-    <form action="${pageContext.request.contextPath}/auth/register" method="post" class="space-y-6" id="registerForm">
-      <div class="grid grid-cols-2 gap-4">
+    <form action="${pageContext.request.contextPath}/auth/register" method="post" id="registerForm">
+      <div>
         <div>
-          <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+          <label>
             <i class="fas fa-user mr-2"></i>First Name
           </label>
           <input type="text"
@@ -47,7 +34,6 @@
                  name="firstName"
                  required
                  value="<%= registrationData != null ? (registrationData.getFirstName() != null ? registrationData.getFirstName() : "") : "" %>"
-                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
                  placeholder="First name">
         </div>
         <div>
@@ -59,13 +45,12 @@
                  name="lastName"
                  required
                  value="<%= registrationData != null ? (registrationData.getLastName() != null ? registrationData.getLastName() : "") : "" %>"
-                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
                  placeholder="Last name">
         </div>
       </div>
 
       <div>
-        <label for="username" class="block text-sm font-medium text-gray-700 mb-2">
+        <label for="username">
           <i class="fas fa-at mr-2"></i>Username
         </label>
         <input type="text"
@@ -73,7 +58,6 @@
                name="username"
                required
                value="<%= registrationData != null ? (registrationData.getUsername() != null ? registrationData.getUsername() : "") : "" %>"
-               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
                placeholder="Choose a username">
       </div>
 
@@ -86,7 +70,6 @@
                name="email"
                required
                value="<%= registrationData != null ? (registrationData.getEmail() != null ? registrationData.getEmail() : "") : "" %>"
-               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
                placeholder="Enter your email">
       </div>
 
@@ -100,7 +83,6 @@
                  name="password"
                  required
                  minlength="6"
-                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
                  placeholder="Create a password">
           <button type="button"
                   onclick="togglePassword('password', 'passwordIcon')"
